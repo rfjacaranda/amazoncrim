@@ -1,0 +1,21 @@
+import streamlit as st
+import pandas as pd
+import psycopg2
+from sqlalchemy import create_engine
+
+# Crie uma conexão com o banco de dados usando SQLAlchemy
+engine = create_engine('postgresql://postgres:0895@localhost:5432/crime_punicao')
+
+# Consulta ao banco de dados para obter os dados da tabela "Amazoncrim"
+query = "SELECT * FROM amazoncrim2020"
+df = pd.read_sql_query(query, engine)
+
+# Fechar a conexão com o banco de dados
+engine.dispose()
+
+# Configurar a página do Streamlit
+st.title('Visualização dos Dados - Amazoncrim')
+st.write('Aqui está uma tabela com os dados da tabela Amazoncrim:')
+
+# Exibir a tabela de dados
+st.dataframe(df)
