@@ -10,7 +10,7 @@ db_name = st.secrets["db_name"]
 connection_name = st.secrets["connection_name"]
 
 # Crie uma conexão com o banco de dados usando SQLAlchemy
-engine = create_engine(f'postgresql+pg8000://{db_username}:{db_password}@/{db_name}?unix_sock=/cloudsql/{connection_name}/.s.PGSQL.5432')
+engine = create_engine(f'postgresql+pg8000://{postgres}:{0895}@/{crime_punicao}?unix_sock=/cloudsql/{thematic-cursor-390616:southamerica-east1:crimepunicao-aoc}/.s.PGSQL.5432')
 
 # Consulta ao banco de dados para obter os dados da tabela "Amazoncrim"
 query = "SELECT * FROM amazoncrim2019"
